@@ -7,13 +7,13 @@ import SupportAgentOutlinedIcon from "@mui/icons-material/SupportAgentOutlined";
 import { SearchIcon, UserCircleIcon } from "@heroicons/react/solid";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import ContactSupportOutlinedIcon from "@mui/icons-material/ContactSupportOutlined";
+import ReceiptOutlinedIcon from '@mui/icons-material/ReceiptOutlined';
 import LogoutIcon from "@mui/icons-material/Logout";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 const checklist = () => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
     width="20"
     height="15.07"
     viewBox="0 0 20 15.07"
@@ -29,7 +29,6 @@ const checklist = () => (
 );
 const productsIcon = () => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
     width="23"
     height="21"
     viewBox="0 0 23 21"
@@ -42,32 +41,13 @@ const productsIcon = () => (
     ></path>
   </svg>
 );
-import RestoreOutlinedIcon from "@mui/icons-material/RestoreOutlined";
 
 const navigation = [
   { name: "Dashboard", href: "/", icon: DashboardOutlinedIcon, current: true },
-  // { name: "Products", href: "/products", icon: UsersIcon, current: false },
   {
-    name: "Products",
-    icon: productsIcon,
-    current: false,
-    children: [
-      { name: "●  Products", href: "/products" },
-      { name: "●  Product Bulk Upload", href: "/ProductBulkUpload" },
-      { name: "●   Sustainability Icons", href: "/SustainabilityIcons" },
-    ],
-  },
-  { name: "Orders", href: "/orders", icon: checklist, current: false },
-  {
-    name: "Product Reviews",
-    href: "/productReviews",
-    icon: StarBorderIcon,
-    current: false,
-  },
-  {
-    name: "Commission History",
-    href: "/commissionHistory",
-    icon: RestoreOutlinedIcon,
+    name: "Invoice",
+    href: "/invoice",
+    icon: ReceiptOutlinedIcon,
     current: false,
   },
   {
