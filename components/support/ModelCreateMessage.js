@@ -10,7 +10,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-
+import dynamic from "next/dynamic";
+import DragDropFile from "../ui-assets/DragDropFile";
+const Editor = dynamic(() => import("../Editor"), {
+  suspense: true,
+});
 
 
 export default function MyDialog({ isOpen, setIsOpen }) {
@@ -173,7 +177,7 @@ export default function MyDialog({ isOpen, setIsOpen }) {
                     
 
 
-
+                      <Editor />
 
                     
 
@@ -189,7 +193,8 @@ export default function MyDialog({ isOpen, setIsOpen }) {
             <div className="grid  gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-3">
              
               <div className="w-full">
-                <Uploader imageUrl={imageUrl} onChange={setImageUrl} />
+              <DragDropFile />
+                {/* <Uploader imageUrl={imageUrl} onChange={setImageUrl} /> */}
               </div>
             </div>
             </div>  
