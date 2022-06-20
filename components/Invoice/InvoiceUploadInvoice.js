@@ -1,12 +1,8 @@
 import { Fragment, useRef, useState } from 'react'
 import { Menu, Dialog, Transition } from "@headlessui/react";
 import { XIcon } from '@heroicons/react/outline'
-import 'react-quill/dist/quill.snow.css';
 import InvoiceUploader from './InvoiceUploader';
 import InvoiceTextEditor from './InvoiceTextEditor';
-
-const ReactQuill = typeof window === 'object' ? require('react-quill') : () => false;
-
 
 export default function InvoiceUploadInvoice () {
 

@@ -34,3 +34,25 @@ export default function InvoiceTextEditor () {
     </div>
   );
 };
+
+// import { useState } from "react";
+// import { RichTextEditor } from "@mantine/rte";
+
+// const initialValue = "Provide a detailed description";
+
+// export default function InvoiceTextEditor() {
+//   const [value, onChange] = useState(initialValue);
+//   console.log(value);
+
+//   return (
+//     <RichTextEditor
+//       value={value}
+//       onChange={onChange}
+//       controls={[
+//         ["bold", "italic", "underline", "link"],
+//         ["unorderedList", "h1", "h2", "h3"],
+//         ["alignLeft", "alignCenter", "alignRight"],
+//       ]}
+//     />
+//   );
+// }
