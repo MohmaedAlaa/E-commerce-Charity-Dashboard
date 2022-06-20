@@ -3,6 +3,10 @@ import { Menu, Dialog, Transition } from "@headlessui/react";
 import { XIcon } from '@heroicons/react/outline'
 import InvoiceUploader from './InvoiceUploader';
 import InvoiceTextEditor from './InvoiceTextEditor';
+// import dynamic from "next/dynamic";
+// const InvoiceTextEditor = dynamic(() => import("../InvoiceTextEditor"), {
+//   suspense: true,
+// });
 
 export default function InvoiceUploadInvoice () {
 
