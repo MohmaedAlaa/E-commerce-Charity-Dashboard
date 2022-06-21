@@ -95,7 +95,7 @@ export default function ChartLine({ empty }) {
           },
           yAxis: {
             display: true,
-
+            suggestedMax:200,
             beginAtZero: true,
             grid: {
               display: true,

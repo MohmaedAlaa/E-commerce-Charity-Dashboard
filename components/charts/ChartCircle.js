@@ -25,7 +25,7 @@ export default function ChartCircle({empty}) {
         </div>
       ):(
         <div className="flex flex-wrap justify-between    ">
-          <div className="flex  flex-col  mt-10  md:w-[49%] w-full divide-y divide-[#EEEEEE]">
+          <div className="flex  flex-col  mt-3  md:w-[54%] w-full divide-y divide-[#EEEEEE] pr-5">
             <div className="flex flex-wrap justify-between py-3 ">
               <div className="flex text-[#686868]	">Total Donation</div>
               <div className="flex text-black font-medium		 ">€ 2.4 K</div>
@@ -41,7 +41,7 @@ export default function ChartCircle({empty}) {
            
           </div>
 
-          <div className="flex flex-col lg:pl-10   md:w-[49%] w-full   content-between	">
+          <div className="flex flex-col lg:  md:w-[45%] w-full   content-between pl-5 border-l	">
             <div className="flex items-center w-auto m-auto relative">
               <Doughnut
                 data={doughnutData}
