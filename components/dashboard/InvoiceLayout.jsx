@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { ProductsData } from "../../public/Data/ProductData";
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
-export default function ProductsLayout({empty}) {
+export default function InvoiceLayout({empty}) {
   const [products, setProducts] = useState(ProductsData);
 
   return (<div className="px-2">
