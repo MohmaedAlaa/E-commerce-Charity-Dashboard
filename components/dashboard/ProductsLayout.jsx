@@ -10,7 +10,7 @@ export default function ProductsLayout({empty}) {
       <div className="flax flax-col">
         <div className="flex flex-row justify-between">
           <h1 className="text-xl font-semibold text-gray-900">
-          Resent Invoice
+          Recent Invoice
           </h1>
         
         </div>

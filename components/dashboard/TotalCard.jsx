@@ -4,16 +4,16 @@ export default function TotalCard({ empty }) {
   return (
     <div className="flex flex-wrap md:justify-between justify-center">
  
-      <div className="  lg:w-[33%]  w-full h-[122px] px-3  py-3 ">
+      <div className="  lg:w-[33%]  w-full h-[146px] px-3  py-3 ">
         <div className="relative flex flex-wrap justify-between  rounded-[14px] bg-[#F3D030]  border shadow-md flex-row  h-full w-full ">
           <div className="flex flex-col justify-between p-4 pl-7 leading-normal">
             <h5 className="mb-1 text-2xl font-bold tracking-tight text-white dark:text-white">
               {empty ? "€ 0" : "€ 100"}
             </h5>
            
-            {!empty ? ( <p className="mt-2 font-normal text-white dark:text-white">
+            {!empty ? ( <p className="mt-2 font-normal text-white dark:text-white text-lg">
             Pending Donation</p>) : (
-             <p className="pb-5 font-normal text-white dark:text-white">
+             <p className="mt-2 font-normal text-white dark:text-white text-lg">
              Pending Donation
             
             <span className="block text-xs ">
@@ -32,16 +32,16 @@ export default function TotalCard({ empty }) {
           </div>
         </div>
       </div>
-      <div className="  lg:w-[33%]  w-full h-[122px] px-3  py-3 ">
+      <div className="  lg:w-[33%]  w-full h-[146px] px-3  py-3 ">
         <div className="relative   flex flex-wrap justify-between rounded-[14px]  	 bg-[#3D897A]  border shadow-md flex-row h-full w-full ">
           <div className="flex flex-col justify-between p-4 pl-7 leading-normal">
             <h5 className="mb-1 text-2xl font-bold tracking-tight text-white dark:text-white">
               {empty ? "€ 0" : "€ 2.4 K"}
             </h5>
            
-            {!empty ? ( <p className="mt-2 font-normal text-white dark:text-white">
+            {!empty ? ( <p className="mt-2 font-normal text-white dark:text-white text-lg">
             Received Donation</p>) : (
-             <p className="pb-5 font-normal text-white dark:text-white">
+             <p className="mt-2 font-normal text-white dark:text-white text-lg">
              Received Donation
             
             <span className="block text-xs ">
@@ -60,16 +60,16 @@ export default function TotalCard({ empty }) {
           </div>
         </div>
       </div>
-      <div className="  lg:w-[33%]  w-full h-[122px] px-3  py-3 ">
+      <div className="  lg:w-[33%]  w-full h-[146px] px-3  py-3 ">
         <div className="relative flex flex-wrap justify-between  rounded-[14px]  	 bg-[#EE6363]  border shadow-md  flex-row   h-full w-full">
           <div className="flex flex-col justify-between p-4 pl-7 leading-normal">
             <h5 className="mb-1 text-2xl font-bold tracking-tight text-white dark:text-white">
               {empty ? "€ 0" : "€ 2.5 K"}
             </h5>
           
-            {!empty ? ( <p className="mt-2 font-normal text-white dark:text-white">
+            {!empty ? ( <p className="mt-2 font-normal text-white dark:text-white text-lg">
             Total Dontions</p>) : (
-             <p className="pb-5 font-normal text-white dark:text-white">
+             <p className="mt-2 font-normal text-white dark:text-white text-lg">
              Total Dontions
             
             <span className="block text-xs ">

@@ -1,122 +1,123 @@
 import { Line } from "react-chartjs-2";
 
 import Image from "next/image";
+import React, { useEffect, useRef } from "react";
+import Chart from "chart.js/auto";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-} from "chart.js";
 
-// export const options = {
-//   plugins: {
-//     legend: { display: true },
-//   },
-//   elements: {
-//     line: {
-//       tension: .5,
-//       borderWidth: 2,
+export default function ChartLine({empty}) {
 
-//       fill: "start",
-//       borderColor: "#3D897A",
-//     },
-//     point: { borderColor: "#3D897A",backgroundColor: "#FFFFFF" , radius: 4, hitRadius: 2 },
-//   },
-//   scales: {fill: "#3D897A",
-//     xAxis: {
-//       display: true,
-//       grid: {
-//         display: false,
-//       },
-//     },
-//     yAxis: {
-//       display: true,
-     
-//       beginAtZero: true,
-//       grid: {
-//         display: true,
-//       },
-//     },
-//   },
-// };
+  const canvasEl = useRef(null);
 
-export const options = {
-  title: {
-    display: true,
-    text: "Number of downloads of our app"
+const colors = {
+  purple: {
+    default: "#3D897A",
+    half: "#3D897A55",
+    quarter: "#3D897A25",
+    zero: "#3D897A00"
   },
-  scales: {
-    yAxes: [
-      {
-        ticks: {
-          min: 0,
-          max: 20,
-          stepSize: 3
-        }
-      }
-    ]
+  indigo: {
+    default: "#fff",
+    quarter: "#fff"
   }
 };
 
-var OrginData = [30, 50, 60, 70, 30, 60, 50, 80, 60, 70, 50, 40];
+useEffect(() => {
+  const ctx = canvasEl.current.getContext("2d");
+  // const ctx = document.getElementById("myChart");
 
+  const gradient = ctx.createLinearGradient(0, 16, 0, 600);
+  gradient.addColorStop(0, colors.purple.half);
+  gradient.addColorStop(0.65, colors.purple.quarter);
+  gradient.addColorStop(1, colors.purple.zero);
 
+  const weight = [30, 50, 60, 70, 30, 60, 50, 80, 60, 70, 50, 40];
 
-export const data = {
-  labels: ["2016", "2017", "2018", "2019", "2020"],
-  datasets: [
-    {
-      label: "No. of downloads (K)",
-      data: [2, 6, 9, 7, 11],
-      borderColor: "#C8ECCC",
-      fill: true,
-      backgroundColor: "#F0FAF1",
-      pointBorderColor: "#AAA",
-      pointBackgroundColor: "#FEF1F1"
-    }
+  const labels =  [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
   ]
-};
+  const data = {
+    labels: labels,
+    elements: {
+      line: {
+        tension: .5,
+        borderWidth: 2,
+   borderColor: "#3D897A"}, point: { borderColor: "#3D897A",backgroundColor: "#FFFFFF" , radius: 4, hitRadius: 2 },},
+    datasets: [
+      {
+        backgroundColor: gradient,
+      
+        data: weight,
+        fill: true,
+        borderWidth: 2,
+        borderColor: colors.purple.default,
+        lineTension: 0.2,
+        pointBackgroundColor: "#fff",
+        pointRadius: 3
+      }
+    ]
+  };
 
 
-// export const data = {
-//   labels: [
-//     "Jan",
-//     "Feb",
-//     "Mar",
-//     "Apr",
-//     "May",
-//     "Jun",
-//     "Jul",
-//     "Aug",
-//     "Sep",
-//     "Oct",
-//     "Nov",
-//     "Dec",
-//   ],
-//   datasets: [
-//     { 
-//       data: OrginData,
-//       backgroundColor: "rgba(75,192,192,0.2)",
-//       borderColor: "rgba(75,192,192,1)",
-//       fill: "#3D897A"
-//     },
-//   ],
-// };
 
-export default function ChartLine({empty}) {
+  const options = {
+    plugins: {
+      legend: { display: false },
+    },
+   
+    scales: {fill: "#3D897A",
+      xAxis: {
+        display: true,
+        grid: {
+          display: false,
+        },
+      },
+      yAxis: {
+        display: true,
+       
+        beginAtZero: true,
+        grid: {
+          display: true,
+        },
+      },
+    },
+  };
+  
+  const config = {
+    type: "line",
+    data: data,
+    options:options
+  };
+  const myLineChart = new Chart(ctx, config);
+
+  return function cleanup() {
+    myLineChart.destroy();
+  };
+});
+
+
   return (
     <div className=" relative   p-4 rounded-[14px]  w-full min-h-full	 bg-[#fff]  border shadow-md flex-row flex-wrap ">
-    <div className="text-xl w-auto  ">Users Donated</div>
+    <div className="text-xl w-auto font-[600] ">Users Donated</div>
     
 
       {empty ? (
  <div className="m-auto flex  flex-col justify-center items-center h-full pb-2 ">
- <div className="m-auto text-center flex  flex-col justify-center items-center mb-6">
+ <div className="m-auto text-center flex  flex-col justify-center items-center h-[188px]">
             <Image
               className=" "
               src={"/images/UsersDonated.png"}
@@ -125,7 +126,7 @@ export default function ChartLine({empty}) {
               alt="empty Users Donated"
             />
           </div>
-          <div className="m-auto text-center flex  flex-col justify-center items-center">
+          <div className="m-auto text-center flex  flex-col justify-center items-center font-[600]">
           Don't have any users donated yet!
           </div>
         </div>
@@ -135,13 +136,8 @@ export default function ChartLine({empty}) {
       <div className="flex flex-wrap justify-between    ">
         <div className="flex  flex-col  mt-10 md:w-[100%] w-full ">
           <div className="flex w-full h-full  ">
-            {ChartJS.register(
-              CategoryScale,
-              LinearScale,
-              PointElement,
-              LineElement
-            )}
-            <Line data={data} options={options} />
+           
+              <canvas id="myChart" ref={canvasEl} height="100" />
           </div>
         </div>
 
