@@ -19,7 +19,7 @@ export default function InvoiceSelect() {
     <Listbox value={selected} onChange={setSelected}>
       {({ open }) => (
         <>
-          <Listbox.Label className="block text-sm font-medium text-[#686868]">
+          <Listbox.Label className="text-[#686868]" style={{font:'normal normal medium 14px/17px Urbanist'}}>
             Sort by
           </Listbox.Label>
           <div className="mt-1 relative" style={{'box-shadow':'0px 10px 60px #DCDCDC8C'}}>

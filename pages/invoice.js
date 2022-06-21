@@ -110,7 +110,7 @@ export default function Example() {
                             checked={checked}
                             onChange={toggleAll}
                         />
-                        <p className="text-sm font-medium text-[#686868]">{count} select</p>
+                        <p className="text-[#686868]" style={{font:'normal normal medium 14px/17px Urbanist'}}>{count} select</p>
                     </div>
                 </div>
 
@@ -145,31 +145,31 @@ export default function Example() {
                             </th>
                             <th
                             scope="col"
-                            className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-500 sm:pl-6"
+                            className="py-3.5 pl-4 pr-3 text-left font-normal text-[#686868] sm:pl-6"
                             >
                                 <p className="ml-10">Invoice ID</p>
                             </th>
                             <th
                             scope="col"
-                            className="px-3 py-3.5 text-left text-sm font-semibold text-gray-500"
+                            className="px-3 py-3.5 text-left font-normal text-[#686868]"
                             >
                             Date Sent
                             </th>
                             <th
                             scope="col"
-                            className="px-3 py-3.5 text-left text-sm font-semibold text-gray-500"
+                            className="px-3 py-3.5 text-left font-normal text-[#686868]"
                             >
                             Status
                             </th>
                             <th
                             scope="col"
-                            className="px-3 py-3.5 text-left text-sm font-semibold text-gray-500"
+                            className="px-3 py-3.5 text-left font-normal text-[#686868]"
                             >
                             Description
                             </th>
                             <th
                             scope="col"
-                            className="px-3 py-3.5 text-left text-sm font-semibold text-gray-500"
+                            className="px-3 py-3.5 text-left font-normal text-[#686868]"
                             >
                             <p className="ml-16">Action</p>
                             </th>

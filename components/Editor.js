@@ -16,6 +16,7 @@ export default function Editor() {
         ["unorderedList", "h1", "h2", "h3"],
         ["alignLeft", "alignCenter", "alignRight"],
       ]}
+      className='h-52'
     />
   );
 }

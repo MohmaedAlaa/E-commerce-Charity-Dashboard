@@ -2,7 +2,13 @@ import { Fragment, useRef, useState } from 'react'
 import { Menu, Dialog, Transition } from "@headlessui/react";
 import { XIcon } from '@heroicons/react/outline'
 import InvoiceUploader from './InvoiceUploader';
-import InvoiceTextEditor from './InvoiceTextEditor';
+// import InvoiceTextEditor from './InvoiceTextEditor';
+import dynamic from "next/dynamic";
+import DragDropFile from "../ui-assets/DragDropFile";
+const Editor = dynamic(() => import("../Editor"), {
+  suspense: true,
+});
+
 // import dynamic from "next/dynamic";
 // const InvoiceTextEditor = dynamic(() => import("../InvoiceTextEditor"), {
 //   suspense: true,
@@ -67,7 +73,7 @@ export default function InvoiceUploadInvoice () {
                 <div className="sm:flex sm:items-start">
                   <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left py-2">
                     <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900 border-b-[2px]">
-                    <h1 className='text-[24px] mb-5'>Add New Invoice</h1>
+                    <h1 className='mb-5 text-[#232323]' style={{font:'normal normal 600 24px/29px Urbanist'}}>Add New Invoice</h1>
                     </Dialog.Title>
 
                     <div className='w-[750px] content-center'>
@@ -164,18 +170,18 @@ export default function InvoiceUploadInvoice () {
 
                           <div className="Message-body flex flex-col w-full text-left">
 
-                            <span className="block text-[14px] font-medium text-[#707082] pb-3">
+                            <span className="block text-[14px] text-[#707082] pb-3" style={{font:"normal normal medium 14px/17px Urbanist"}}>
                               Description
                             </span>
 
                             {/* <ReactQuill theme="snow" value={value} onChange={setValue}   /> */}
-                                 <InvoiceTextEditor/>
+                                 <Editor/>
                             {/* the end of Message body */}
                           </div>
 
-                          <div className="Message-body flex flex-col w-full text-left py-3 ">
+                          <div className="Message-body flex flex-col w-full text-left py-3">
                             
-                            <span className="block text-[14px] font-medium text-[#707082] pb-3">
+                            <span className="block text-[14px] text-[#707082] pb-3" style={{font:"normal normal medium 14px/17px Urbanist"}}>
                               File
                             </span>
 
