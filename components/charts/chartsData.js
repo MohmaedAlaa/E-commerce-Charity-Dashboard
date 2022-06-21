@@ -6,14 +6,14 @@ export const doughnutOptions = {
       borderWidth:0,
     }
   },
-  cutout:45,  responsive: true,
+  cutout:40,  responsive: true,
   
 };
 export const doughnutData ={
   
-  labels: [ "Event 1", "Event 2", "Event 3", "Event 4"],
+
   datasets: [
-  {label: "My First Dataset ",
+  {
   data: [90, 10],
   backgroundColor:['#3D897A', '#F3D030'],
   

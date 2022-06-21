@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { ProductsData } from "../../public/Data/ProductData";
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
-export default function ProductsLayout({empty}) {
+export default function InvoiceLayout({empty}) {
   const [products, setProducts] = useState(ProductsData);
 
   return (<div className="px-2">
@@ -10,7 +10,7 @@ export default function ProductsLayout({empty}) {
       <div className="flax flax-col">
         <div className="flex flex-row justify-between">
           <h1 className="text-xl font-semibold text-gray-900">
-          Resent Invoice
+          Recent Invoice
           </h1>
         
         </div>
@@ -18,20 +18,20 @@ export default function ProductsLayout({empty}) {
           <div className="   sm:rounded-lg mt-5  relative max-h-[450px] overflow-x-auto overflow-y-scroll scroll-bar">
             <table className="w-full text-sm text-left table-auto	 ">
               <thead className="sticky top-0 bg-white border-b ">
-                <tr className="text-xs     w-full ">
-                  <th scope="col" className="pl-6 py-3">
+                <tr className="text-sm      w-full ">
+                  <th scope="col" className="pl-6 py-3 font-medium text-[#686868]">
                   Invoice ID
                   </th>
-                  <th scope="col" className="px-6 py-3">
+                  <th scope="col" className="px-6 py-3 font-medium text-[#686868]">
                   Date Sent
                   </th>
-                  <th scope="col" className="px-6 py-3">
+                  <th scope="col" className="px-6 py-3 font-medium text-[#686868]">
                   Status
                   </th>
-                  <th scope="col" className="px-6 py-3">
+                  <th scope="col" className="px-6 py-3 font-medium text-[#686868]">
                   Description
                   </th>
-                  <th scope="col" className="px-6 py-3">
+                  <th scope="col" className="px-6 py-3 font-medium text-[#686868]">
                   Actions                  
                   </th>
                 </tr>
@@ -39,25 +39,25 @@ export default function ProductsLayout({empty}) {
 
               <tbody className="">
                 {products.map((product) => (
-                  <tr className="" key={product.id}>
+                  <tr className="!font-medium !text-[#707082]" key={product.id}>
                     <th
                       scope="row"
-                      className="pr-6 py-4 font-medium text-gray-500 dark:text-white whitespace-nowrap"
+                      className="pr-6 py-4   whitespace-nowrap"
                     >
                       <div className="flex items-center">
                       
-                        <div className="ml-4">
-                          <div className="font-medium text-gray-500">
+                        <div className="ml-4 font-medium text-[#707082">
+                          
                             {product.InvoiceID}
-                          </div>
+                        
                         </div>
                       </div>
                     </th>
                     
-                    <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-500">
+                    <td className="whitespace-nowrap px-6 py-4 text-sm ">
                     {product.date}
                     </td>
-                    <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-500">
+                    <td className="whitespace-nowrap px-6 py-4 text-sm ">
                     <span
                         className={`${
                           product.Status === "Donated"
@@ -68,10 +68,10 @@ export default function ProductsLayout({empty}) {
                         {String(product.Status)}
                       </span>
                     </td>
-                    <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-500">
+                    <td className="whitespace-nowrap px-6 py-4 text-sm ">
                       {product.Description}
                     </td>
-                    <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-500">
+                    <td className="whitespace-nowrap px-6 py-4 text-sm ">
                    
                           <a href={product.Actions}><FileDownloadOutlinedIcon className="w-5" /> Download</a>
                         </td>

@@ -17,7 +17,7 @@ const FulList=()=>{
 // console.log(MessageImg)
   return (
     <div className="supportList  w-full flex flex-col">
-      <h1 className="font-medium	text-[24px] w-full">Messages ({messagesList?.length})</h1>
+      <h1 className="font-medium	text-[24px] w-full">Messages ({messagesList ? messagesList?.length : "0"})</h1>
       {messagesList?.length > 0 ? (<>
       <div className="flex flex-row flex-wrap justify-between mt-5">
         <div className="dropdown flex flex-row  align-middle justify-between w-[248px] ">
@@ -40,7 +40,7 @@ const FulList=()=>{
 ):(
   <> <div className="mt-6 w-full bg-white rounded-lg shadow-lg flex flex-col justify-center text-center py-20">
   <Image
-        src={"/Messages.svg"}
+        src={"/images/Messages.svg"}
     width={187}
     height={173}
     alt="empty Messages"

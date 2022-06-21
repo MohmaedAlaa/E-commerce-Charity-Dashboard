@@ -7,18 +7,13 @@ import SupportAgentOutlinedIcon from "@mui/icons-material/SupportAgentOutlined";
 import { SearchIcon, UserCircleIcon } from "@heroicons/react/solid";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import ContactSupportOutlinedIcon from "@mui/icons-material/ContactSupportOutlined";
-import ReceiptOutlinedIcon from '@mui/icons-material/ReceiptOutlined';
+import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
 import LogoutIcon from "@mui/icons-material/Logout";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
+import LanguageIcon from "@mui/icons-material/Language";
 // const checklist = () => (
-//   <svg
-//     width="20"
-//     height="15.07"
-//     viewBox="0 0 20 15.07"
-//     className="mr-4"
-//   >
+//   <svg width="20" height="15.07" viewBox="0 0 20 15.07" className="mr-4">
 //     <path
 //       fill="#f9f9f9"
 //       d="M11 7H2v2h9zm0 8H2v2h9zm5.34-4L12.8 7.46l1.41-1.41 2.12 2.12 4.24-4.24L22 5.34zm0 8l-3.54-3.54 1.41-1.41 2.12 2.12 4.24-4.24L22 13.34z"
@@ -28,12 +23,7 @@ import { useRouter } from "next/router";
 //   </svg>
 // );
 // const productsIcon = () => (
-//   <svg
-//     width="23"
-//     height="21"
-//     viewBox="0 0 23 21"
-//     className="mr-4"
-//   >
+//   <svg width="23" height="21" viewBox="0 0 23 21" className="mr-4">
 //     <path
 //       fill="#f9f9f9"
 //       d="M5.308 21a1.765 1.765 0 01-1.77-1.751V7H1.769A1.765 1.765 0 010 5.25v-3.5A1.765 1.765 0 011.769 0h19.462A1.765 1.765 0 0123 1.75v3.5A1.765 1.765 0 0121.231 7h-1.77v12.25A1.765 1.765 0 0117.692 21zm0-1.751h12.384V7H5.308zm15.923-14V1.75H1.769v3.5h19.462zM7.79 9.625c-.371 0-.675-1.75-.675-1.75h8.769s-.3 1.75-.674 1.75z"
@@ -71,6 +61,11 @@ function classNames(...classes) {
 export default function Layout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const router = useRouter();
+  const FullName = "Ahmed kamal";
+  const FirstName = FullName.split(" ")[0];
+  const ShortName =
+    FullName.split(" ")[0].split("")[0] + FullName.split(" ")[1].split("")[0];
+
   return (
     <div>
       {/*
@@ -312,20 +307,32 @@ export default function Layout({ children }) {
                 <MenuAlt2Icon className="h-6 w-6" aria-hidden="true" />
               </button>
               <div className="flex-1 flex justify-end px-4 md:px-0">
-                <div className="ml-4 flex items-center md:ml-6 ">
+                <div className="ml-4 flex items-center md:ml-6  md:mr-6">
                   <button
                     type="button"
-                    className="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    className=" p-1 rounded-full text-[#222]  focus:outline-none"
+                  >
+                    <span className="sr-only">change Language</span>
+                    <LanguageIcon className="h-6 w-6" aria-hidden="true" />
+                  </button>
+                  <button
+                    type="button"
+                    className=" p-1 rounded-full text-[#222]  focus:outline-none relative"
                   >
                     <span className="sr-only">View notifications</span>
                     <BellIcon className="h-6 w-6" aria-hidden="true" />
+                    <span className="absolute top-0 rounded-full h-3 w-3 bg-[#EE6363] text-white text-[8px]"></span>
                   </button>
 
                   {/* Profile dropdown */}
                   <div className="ml-3 relative">
                     <Link href="/profile/id">
                       <a>
-                        <UserCircleIcon className="h-10 w-10 text-primary" />
+                        <span className="w-10 h-10 bg-[#A0D6D4] text-base p-3 rounded-md ">
+                          {ShortName}
+                        </span>
+                        <span className="ml-2">{FirstName}</span>
+                        {/* <UserCircleIcon className="h-10 w-10 text-primary" /> */}
                       </a>
                     </Link>
                   </div>

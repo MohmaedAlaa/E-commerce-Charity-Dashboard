@@ -50,7 +50,7 @@ export default function SupportTable({ MessagesList }) {
                   </div>
                 )}
                 <table className="min-w-full table-fixed divide-y divide-gray-300">
-                  <thead className=" text-[#686868]">
+                  <thead className="  font-medium text-[#686868]">
                     <tr>
                       <th
                         scope="col"
@@ -66,25 +66,25 @@ export default function SupportTable({ MessagesList }) {
                       </th>
                       <th
                         scope="col"
-                        className="min-w-[5rem] py-3.5 pr-3 text-left text-sm font-semibold "
+                        className="min-w-[5rem] py-3.5 pr-3 text-left text-sm   font-medium text-[#686868]"
                       >
                         ID
                       </th>
                       <th
                         scope="col"
-                        className="px-3 py-3.5 text-left text-sm font-semibold "
+                        className="px-3 py-3.5 text-left text-sm   font-medium text-[#686868]"
                       >
                         Subject
                       </th>
                       <th
                         scope="col"
-                        className="px-3 py-3.5 text-left text-sm font-semibold "
+                        className="px-3 py-3.5 text-left text-sm   font-medium text-[#686868]"
                       >
                         Status
                       </th>
                       <th
                         scope="col"
-                        className="px-3 py-3.5 text-left text-sm font-semibold "
+                        className="px-3 py-3.5 text-left text-sm   font-medium text-[#686868]"
                       >
                         Date / Time
                       </th>
@@ -145,7 +145,7 @@ export default function SupportTable({ MessagesList }) {
                       Message.Status === "Solved"
                         ? "text-[#3D897A]  bg-[#3D897A] bg-opacity-25"
                         : "text-[#F88700] bg-[#EE6363] bg-opacity-25"
-                    } inline-flex rounded-full px-2 text-xs font-semibold leading-5 `}
+                    } inline-flex rounded-full px-2 text-xs  leading-5 `}
                   >
                     {String(Message.Status)}
                   </span>
