@@ -86,7 +86,7 @@ export default function ChartLine({ empty }) {
         },
 
         scales: {
-          fill: "#3D897A",
+        
           xAxis: {
             display: true,
             grid: {
@@ -123,7 +123,7 @@ export default function ChartLine({ empty }) {
         <div className="flex flex-wrap justify-between    ">
           <div className="flex  flex-col  mt-10 md:w-[100%] w-full ">
             <div className="flex w-full h-full  ">
-              <canvas id="myChart" ref={canvasEl} height="100" />
+              <canvas id="myChart" ref={canvasEl} height="100" className="h-full" />
             </div>
           </div>
         </div>
